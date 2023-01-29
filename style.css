@@ -1,0 +1,44 @@
+.container{
+    text-align:center;
+}
+
+#app{
+    text-align:center;
+}
+
+.form-name,.form-gender,.form-birth,
+.form-post,.form-address,.form-phone,
+.form-email,.form-kind,.form-content{
+    width:80%;
+    margin:0 auto;
+    padding:15px 0;
+    margin-bottom:30px;
+    background-color:whitesmoke;
+}
+
+input{
+    padding:5px 10px;
+    min-width:250px;
+}
+
+.error-name,.error-gender,.error-birth,
+.error-post,.error-address,.error-phone,
+.error-email,.error-kind,.error-content{
+    color:red;
+    font-weight:bold;
+    text-align:center;
+}
+
+button{
+    width:80%;
+    background-color: teal;
+    color:white;
+    padding:20px 0;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    margin-bottom: 50px;
+}
+button:hover {
+    background: #82aaaa
+}
