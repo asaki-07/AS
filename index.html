@@ -15,8 +15,7 @@
         <div class="form-name">
             <p>氏名</p>
             <!-- エラーメッセージを追加 -->
-            <p class="error-name">氏名を入力してください</p>
-            <p class="error-name">５０文字以内で入力してください</p>
+            <p v-if="isInValidName"class="error-name">氏名は５０文字以内で入力してください</p>
             <input type="text" name="name" placeholder="氏名を入力してください" v-model="name">
         </div>
 
@@ -24,9 +23,10 @@
         <div class="form-gender">
             <p>性別</p>
             <!-- エラーメッセージを追加 -->
-            <p class="error-gender">性別を選択してください</p>
+            <p v-if="isInValidGender"class="error-gender">性別を選択してください</p>
             <select v-model="selected">
             <option disabled value="">性別を選択してください</option>
+            <option></option>
             <option>男</option>
             <option>女</option>
             <option>答えたくない</option>
@@ -37,7 +37,7 @@
         <div class="form-birth">
             <p>生年月日</p>
             <!-- エラーメッセージを追加 -->
-            <p class="error-birth">生年月日を入力してください</p>
+            <p v-if="isInValidBirth"class="error-birth">生年月日を入力してください</p>
             <input type="text" name="birth" placeholder="生年月日を入力してください" v-model="birth">
         </div>
 
@@ -45,7 +45,7 @@
         <div class="form-post">
             <p>郵便番号</p>
             <!-- エラーメッセージを追加 -->
-            <p class="error-post">郵便番号を入力してください</p>
+            <p v-if="isInValidPost"class="error-post">郵便番号を入力してください</p>
             <input type="text" name="post" placeholder="郵便番号を入力してください" v-model="post">
         </div>
 
@@ -53,8 +53,7 @@
         <div class="form-address">
             <p>住所</p>
             <!-- エラーメッセージを追加 -->
-            <p class="error-address">住所を入力してください</p>
-            <p class="error-address">２００文字以内で入力してください</p>
+            <p v-if="isInValidAddress"class="error-address">住所は２００文字以内で入力してください</p>
             <input type="text" name="address" placeholder="住所を入力してください" v-model="address">
         </div>
 
@@ -67,7 +66,7 @@
         <div class="form-email">
             <p>メールアドレス</p>
             <!-- エラーメッセージを追加 -->
-            <p class="error-email">２００文字以内で入力してください</p>
+            <p v-if="isInValidEmail"class="error-email">２００文字以内で入力してください</p>
             <input type="text" name="email" placeholder="メールアドレスを入力してください" v-model="email">
         </div>
 
@@ -75,9 +74,10 @@
         <div class="form-kind">
             <p>問い合わせの種類</p>
             <!-- エラーメッセージを追加 -->
-            <p class="error-kind">問い合わせの種類を選択してください</p>
+            <p v-if="isInValidKind"class="error-kind">問い合わせの種類を選択してください</p>
             <select v-model="selected">
             <option disabled value="">問い合わせの種類を選択してください</option>
+            <option></option>
             <option>商品について</option>
             <option>支払方法について</option>
             <option>キャンペーンについて</option>
@@ -91,9 +91,8 @@
         <div class="form-content">
             <p>相談内容</p>
             <!-- エラーメッセージを追加 -->
-            <p class="error-content">相談内容を入力してください</p>
-            <p class="error-content">１，０００文字以内で入力してください</p>
-            <input tyepe="text" name="content" placeholder="相談内容を入力してください" v-model="content">
+            <p v-if="isInValidContent"class="error-content">相談内容は１，０００文字以内で入力してください</p>
+            <input type="text" name="content" placeholder="相談内容を入力してください" v-model="content">
         </div>
 
     </div>
