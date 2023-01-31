@@ -11,11 +11,11 @@ new Vue({
             email: '',
             kind: '',
             content: ''
-        }
+        };
     },
     computed: {
         isInValidName() {
-            return this.name.length <5
+            return this.name.length == 0 || this.name.length >50
         },
         isInValidGender() {
             return this.gender.length == 0
@@ -24,13 +24,10 @@ new Vue({
             return this.birth.length == 0
         },
         isInValidPost() {
-            return this.post.length < 7
+            return this.post.length == 0 || this.post.length <7
         },
         isInValidAddress() {
-            return this.address.length == 0
-        },
-        isInValidAddress() {
-            return this.address.length > 200
+            return this.address.length == 0 || this.address.length >200
         },
         isInValidEmail() {
             return this.email.length > 200
@@ -39,10 +36,7 @@ new Vue({
             return this.kind.length == 0
         },
         isInValidContent() {
-            return this.content.length == 0
+            return this.content.length == 0 || this.content.length >1000
         },
-        isInValidContent() {
-            return this.content.length > 1000
-        }
-    },
-})
+    }
+});
